@@ -1,0 +1,227 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+@*<h1>@ViewData["Title"]</h1>*@
+
+
+<div class="container" style="min-height:700px;position:relative;top:60px;">
+
+
+    <div class="row">
+        <div class="col-md-4 offset-2">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post" enctype="multipart/form-data">
+                <h4 class="text-center">Register</h4>
+                <hr/>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="row">
+                    <div class="col-3">
+                        <label asp-for="Input.Firstname"></label>
+                    </div>
+
+                    <div class="col-9">
+                        <div class="form-group">
+
+                            <input asp-for="Input.Firstname" class="form-control"/>
+                            <span asp-validation-for="Input.Firstname" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <label asp-for="Input.Lastname"></label>
+                    </div>
+
+                    <div class="col-9">
+                        <div class="form-group">
+
+                            <input asp-for="Input.Lastname" class="form-control"/>
+                            <span asp-validation-for="Input.Lastname" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <label asp-for="Input.PhoneNumber"></label>
+                    </div>
+                    <div class="col-9">
+                        <div class="form-group">
+
+                            <input type="tel" asp-for="Input.PhoneNumber" pattern="[0-9]{10}" class="form-control"/>
+                            <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <label asp-for="Input.Street"></label>
+                    </div>
+                    <div class="col-9">
+                        <div class="form-group">
+
+                            <input asp-for="Input.Street" class="form-control"/>
+                            <span asp-validation-for="Input.Street" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <label asp-for="Input.City"></label>
+                    </div>
+                    <div class="col-9">
+                        <div class="form-group">
+
+                            <input asp-for="Input.City" class="form-control"/>
+                            <span asp-validation-for="Input.City" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <label asp-for="Input.Province"></label>
+                    </div>
+                    <div class="col-9">
+                        <div class="form-group">
+
+                            <input asp-for="Input.Province" class="form-control"/>
+                            <span asp-validation-for="Input.Province" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <label asp-for="Input.Email"></label>
+                    </div>
+
+                    <div class="col-9">
+                        <div class="form-group">
+
+                            <input asp-for="Input.Email" class="form-control"/>
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
+                        <label asp-for="Input.Password"></label>
+                    </div>
+
+                    <div class="col-9">
+                        <div class="form-group">
+
+                            <input asp-for="Input.Password" class="form-control"/>
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
+                        <label asp-for="Input.ConfirmPassword"></label>
+                    </div>
+                    <div class="col-9">
+                        <div class="form-group">
+
+                            <input asp-for="Input.ConfirmPassword" class="form-control"/>
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                @* <div class="row"> *@
+                @*     <div class="col-3"> *@
+                @*         <label asp-for="Input.Street"></label> *@
+                @*     </div> *@
+                @*     <div class="col-9"> *@
+                @*         <div class="form-group"> *@
+                @* *@
+                @* *@
+                @*             <select asp-for="Input.S" class="form-control" asp-items="ViewBag.CountryId as SelectList" id="Country-target"></select> *@
+                @*             <span asp-validation-for="Input.CountryId" class="text-danger"></span> *@
+                @*         </div> *@
+                @*     </div> *@
+                @* </div> *@
+                @* *@
+                @* <div class="row"> *@
+                @*     <div class="col-3"> *@
+                @*         <label asp-for="Input.CityId"></label> *@
+                @*     </div> *@
+                @*     <div class="col-9"> *@
+                @*         <div class="form-group"> *@
+                @* *@
+                @*             <select asp-for="Input.CityId" class="form-control" asp-items="ViewBag.CityId as SelectList" id="city-target"></select> *@
+                @*             <span asp-validation-for="Input.CityId" class="text-danger"></span> *@
+                @*         </div> *@
+                @*     </div> *@
+                @* </div> *@
+
+                <div class="row">
+                    <div class="col-3">
+                        <label asp-for="Input.image"></label>
+                    </div>
+                    <div class="col-9">
+                        <div class="form-group">
+
+                            <input id="" onchange="loadFile(event)" type="file" asp-for="Input.image"/>
+                            <span asp-validation-for="Input.image" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn btn-danger btn-block mt-2">Register</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <section>
+                <br/>
+                <img src="@Url.Content("~/img/defaultimg.png")" id="output" alt="" class="img-thumbnail mt-4" style="width:300px;height:300px; border-radius:40%"/>
+            </section>
+        </div>
+    </div>
+
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+    <script>
+        $(document).ready(function () {
+            $("#Country-target").on("change", function () {
+                debugger;
+                $list = $("#city-target");
+                $.ajax({
+                    url: "/CountryCity/getCities/",
+                    type: "GET",
+                    contentType: "json",
+                    data: { id: $("#Country-target").val() }, //id of the state which is used to extract cities
+                    traditional: true,
+                    success: function (result) {
+                        $list.empty();
+                        $.each(result, function (i, item) {
+                            $list.append('<option value="' + item.cityId + '"> ' + item.cityName + ' </option>');
+                        });
+                    },
+                    error: function () {
+                        alert("Something went wrong call the police");
+                    }
+                });
+            });
+
+           
+        });
+
+        var loadFile = function (event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById('output');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        };
+    </script>
+}
